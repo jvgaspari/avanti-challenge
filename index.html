@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Box cabeçalho -->
@@ -63,7 +66,7 @@
                     <img src="./assets/img/promocao.PNG" alt="Produto em promoção">
                 </figure>
                 <!-- Box promoção indisponível -->
-                <div class="corpo__primeiro" data-primeiro>
+                <div class="corpo__card">
                     <!-- Box imagem promoção indisponível -->
                     <div class="box--image">
                         <img src="https://avantivtexio.vtexassets.com/arquivos/ids/155508-300-300?width=300&height=300&aspect=true"/>
@@ -74,7 +77,7 @@
                     </div>
                     <!-- Descrição do produto de promoção indisponível -->
                     <div class="box--descricao">
-                        <p class="blusinha">Jaqueta Marrom Feminina Tamanho M</p>
+                        <p>Jaqueta Marrom Feminina Tamanho M</p>
                     </div>
                     <!-- Box de preços da promoção indisponível -->
                     <div class="box--precos">
@@ -87,18 +90,26 @@
                     </div>
                 </div>
                 <!-- Box promoção disponível -->
-                <div class="corpo__segundo" data-segundo>
-                    <!-- Imagem da promoção disponível -->
-                    <img src="https://avantivtexio.vtexassets.com/arquivos/ids/155508-300-300?width=300&height=300&aspect=true"/>
-                    <!-- Descrição da promoção disponível -->
-                    <p class="descricao">"Jaqueta Marrom Feminina Tamanho M"</p>
+                <div class="corpo__card">
+                    <!-- Box imagem promoção disponível -->
+                    <div class="box--image">
+                        <img src="https://avantivtexio.vtexassets.com/arquivos/ids/155508-300-300?width=300&height=300&aspect=true"/>
+                    </div>
+                    <!-- Box desconto -->
+                    <div class="box--desconto">
+                        <p>10% off</p>
+                    </div>
+                    <!-- Descrição do produto de promoção disponível -->
+                    <div class="box--descricao">
+                        <p>Jaqueta Marrom Feminina Tamanho M</p>
+                    </div>
                     <!-- Box de preços da promoção disponível -->
-                    <div class="precos">
-                        <span>49,00</span>
-                        <span>29,00</span>
+                    <div class="box--precos">
+                        <span class="span--black">49.00</span>
+                        <span class="span--red">29.00</span>
                     </div>
                     <!-- Box de quantidades de produtos da promoção disponível -->
-                    <div>
+                    <div class="box--contador">
                         <!-- botão de diminuir quantidade do produto -->
                         <button id="btn_decrementar" type="button">-</button>
                         <!-- conteúdo que mostra a quantidade do produto -->
@@ -107,7 +118,9 @@
                         <button id="btn_incrementar" type="button">+</button>
                     </div>
                     <!-- botão que adiciona a quantidade de itens no carrinho -->
-                    <button onclick="adicionaCarrinho()">Adicionar</button>
+                    <div class="box--botao--adc">
+                        <button onclick="adicionaCarrinho()">Adicionar</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -18,7 +18,7 @@ const items = [
   },
   {
     id: "1",
-    name: "Jaqueta Marrom Feminina Tamanho M",
+    name: "Macacão Bordado Feminino Tamanho M",
     linkURL: "https://avantivtexio.myvtex.com/body-manga-babados-azul-tulipa-0hf71900/p",
     imageURL: "https://avantivtexio.vtexassets.com/arquivos/ids/155508-300-300?width=300&height=300&aspect=true",
     bestPrice: "49.00",
@@ -95,33 +95,69 @@ const iniciarVitrine = () => {
   var containerProdutos = document.getElementById('produtos');
   items.map((val) => {
     if(val.available > 0){
-      containerProdutos.innerHTML += `
-                      <div class="produto-sozinho">
-                      <img src="${val.imageURL}"/>
-                      <p class="descricao">${val.name}</p>
-                        <div class="precos">
-                          <span>${val.bestPrice}
-                          </span><span>${val.sellingPrice}</span>
-                        </div>
-                        <div>
-                          <button id="btn_decrementar" type="button">-</button>
-                          <span id="contador">0</span>
-                          <button id="btn_incrementar" type="button">+</button>
-                        </div>
-                        <button>Adicionar</button>
-                      </div>
-                      `;
+      containerProdutos.innerHTML +=
+       `
+       <!-- Box promoção disponível -->
+       <div class="corpo__card">
+           <!-- Box imagem promoção disponível -->
+           <div class="box--image">
+               <img src="${val.imageURL}"/>
+           </div>
+           <!-- Box desconto -->
+           <div class="box--desconto">
+               <p>10% off</p>
+           </div>
+           <!-- Descrição do produto de promoção disponível -->
+           <div class="box--descricao">
+               <p>${val.name}</p>
+           </div>
+           <!-- Box de preços da promoção disponível -->
+           <div class="box--precos">
+               <span class="span--black">R$${val.bestPrice}</span>
+               <span class="span--red">R$${val.sellingPrice}</span>
+           </div>
+           <!-- Box de quantidades de produtos da promoção disponível -->
+           <div class="box--contador">
+               <!-- botão de diminuir quantidade do produto -->
+               <button id="btn_decrementar" type="button">-</button>
+               <!-- conteúdo que mostra a quantidade do produto -->
+               <span id="contador">0</span>
+               <!-- botão de aumentar a quantidade do produto-->
+               <button id="btn_incrementar" type="button">+</button>
+           </div>
+           <!-- botão que adiciona a quantidade de itens no carrinho -->
+           <div class="box--botao--adc">
+               <button onclick="adicionaCarrinho()">Adicionar</button>
+           </div>
+       </div>
+      `;
     } else {
-      containerProdutos.innerHTML += `
-                    <div class="produto-sozinho">
-                    <img src="${val.imageURL}"/>
-                    <p class="descricao">${val.name}</p>
-                      <div class="precos">
-                        <span>${val.bestPrice}
-                        </span><span>${val.sellingPrice}</span>
-                      </div>
-                      <button>Indisponível</button>
-                    </div>
+      containerProdutos.innerHTML += 
+      `
+        <!-- Box promoção indisponível -->
+        <div class="corpo__card">
+            <!-- Box imagem promoção indisponível -->
+            <div class="box--image">
+                <img src="${val.imageURL}"/>
+            </div>
+            <!-- Box desconto -->
+            <div class="box--desconto">
+                <p>10% off</p>
+            </div>
+            <!-- Descrição do produto de promoção indisponível -->
+            <div class="box--descricao">
+                <p>${val.name}</p>
+            </div>
+            <!-- Box de preços da promoção indisponível -->
+            <div class="box--precos">
+                <span class="span--black">R$${val.bestPrice}</span>
+                <span class="span--red">R$${val.sellingPrice}</span>
+            </div>
+            <!-- Botão de promoção indisponível -->
+            <div class="box--botao">
+                <button >Indisponível</button>
+            </div>
+        </div>
       `;
     }
   })
@@ -142,8 +178,8 @@ btnIncrementar.addEventListener('click', function() {
 })
 
 btnDecrementar.addEventListener('click', function() {
-    if(contador > 0){
-        p.innerHTML = --contador;
+  if(contador > 0){
+      p.innerHTML = --contador;
     }else {
         return;
     }
