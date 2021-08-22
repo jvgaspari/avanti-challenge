@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avanti e-commerce</title>
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS Slick -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Box cabeçalho -->
+    <header class="cabecalho">
+        <!-- Box ferramentas -->
+        <div class="cabecalho__principal principal">
+            <!-- Box logo -->
+            <figure class="principal__logo">
+                <img src="./assets/img/logo.PNG" alt="Avanti">
+            </figure>
+            <!-- Box filtro de busca -->
+            <div class="principal__busca">
+                <input placeholder="O que procura?"/>
+                <button>OK</button>
+            </div>
+            <!-- Box carrinho de compras -->
+            <div class="principal__carrinho">
+                <i class="fas fa-shopping-cart">
+                <span id="span--carrinho">0</span>
+                </i>
+            </div>
+        </div>
+        <!-- Box navegação -->
+        <nav class="cabecalho__nav">
+            <li>Menu 1</li>
+            <li>Menu 2</li>
+            <li>Menu 3</li>
+            <li>Menu 4</li>
+        </nav>
+    </header>
+    <!-- Box do corpo do projeto -->
+    <main>
+        <!-- Box banner -->
+        <figure class="banner">
+            <img src="./assets/img/banner.PNG" alt="Banner">
+        </figure>
+        <!-- Box promoção  -->
+        <div class="promocao">
+            <!-- Cabeçalho promoção -->
+            <h2 class="promocao__titulo">Promoção do dia</h2>
+            <!-- Box do conteúdo da promoção -->
+            <div class="promocao__corpo corpo">
+                <!-- Box imagem promoção -->
+                <figure>
+                    <img src="./assets/img/promocao.PNG" alt="Produto em promoção">
+                </figure>
+                <!-- Box promoção indisponível -->
+                <div class="corpo__primeiro" data-primeiro>
+                    <!-- Box imagem promoção indisponível -->
+                    <div class="box--image">
+                        <img src="https://avantivtexio.vtexassets.com/arquivos/ids/155508-300-300?width=300&height=300&aspect=true"/>
+                    </div>
+                    <!-- Box desconto -->
+                    <div class="box--desconto">
+                        <p>10% off</p>
+                    </div>
+                    <!-- Descrição do produto de promoção indisponível -->
+                    <div class="box--descricao">
+                        <p class="blusinha">Jaqueta Marrom Feminina Tamanho M</p>
+                    </div>
+                    <!-- Box de preços da promoção indisponível -->
+                    <div class="box--precos">
+                        <span class="span--black">49.00</span>
+                        <span class="span--red">29.00</span>
+                    </div>
+                    <!-- Botão de promoção indisponível -->
+                    <div class="box--botao">
+                        <button >Indisponível</button>
+                    </div>
+                </div>
+                <!-- Box promoção disponível -->
+                <div class="corpo__segundo" data-segundo>
+                    <!-- Imagem da promoção disponível -->
+                    <img src="https://avantivtexio.vtexassets.com/arquivos/ids/155508-300-300?width=300&height=300&aspect=true"/>
+                    <!-- Descrição da promoção disponível -->
+                    <p class="descricao">"Jaqueta Marrom Feminina Tamanho M"</p>
+                    <!-- Box de preços da promoção disponível -->
+                    <div class="precos">
+                        <span>49,00</span>
+                        <span>29,00</span>
+                    </div>
+                    <!-- Box de quantidades de produtos da promoção disponível -->
+                    <div>
+                        <!-- botão de diminuir quantidade do produto -->
+                        <button id="btn_decrementar" type="button">-</button>
+                        <!-- conteúdo que mostra a quantidade do produto -->
+                        <span id="contador">0</span>
+                        <!-- botão de aumentar a quantidade do produto-->
+                        <button id="btn_incrementar" type="button">+</button>
+                    </div>
+                    <!-- botão que adiciona a quantidade de itens no carrinho -->
+                    <button onclick="adicionaCarrinho()">Adicionar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Box banner -->
+        <figure class="banner">
+            <img src="./assets/img/banner.PNG" alt="Banner">
+        </figure>
+        <!-- Box carrossel -->
+        <div class="carrossel">
+            <!-- Título do carrossel -->
+            <h2 class="carrossel__titulo">Os mais vendidos</h2>
+            <!-- Box do carrossel renderizado pelo JavaScript -->
+            <div class="carrossel__corpo" id="produtos"data-carrossel>    
+            </div>
+        </div>
+        <!-- Box texto explicativo -->
+        <div class="paragrafo">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe explicabo adipisci doloribus reprehenderit quisquam earum cumque, ipsa quaerat eos perspiciatis voluptate neque, debitis dicta magni numquam dolor veritatis nostrum pariatur! Laboriosam veritatis voluptatem amet est similique dolores debitis nulla, atque qui doloribus beatae quis id illum temporibus sed quae? Doloremque.
+            </p>
+        </div>
+    </main>
+    <!-- Box rodapé -->
+    <footer>
+        <!-- Conteúdo rodapé -->
+        <div class="rodape">
+            <!-- Box categorias -->
+            <div class="rodape__categorias">
+                <!-- título categoria -->
+                <p>Categorias</p>
+                <!-- Box corpo categorias -->
+                <div>
+                    <ul>
+                        <li>Categoria</li>
+                        <li>Categoria</li>
+                        <li>Categoria</li>
+                        <li>Categoria</li>
+                        <li>Categoria</li>
+                    </ul>
+                    <ul>
+                        <li>Categoria</li>
+                        <li>Categoria</li>
+                        <li>Categoria</li>
+                        <li>Categoria</li>
+                        <li>Categoria</li>
+                    </ul>
+                    </ul>
+                </div>
+            </div>
+            <!-- Box institucional -->
+            <div class="rodape__institucional">
+                <!-- título institucional -->
+                <p>Institucional</p>
+                <!-- Box institucional -->
+                <ul>
+                    <li>Privacidade e Termos de Uso</li>
+                    <li>Trabalhe Conosco</li>
+                    <li>Política de Troca e Devolução</li>
+                    <li>Política de Frete</li>
+                    <li>Fale Conosco</li>
+                </ul>
+            </div>
+            <!-- Box Fale Conosco -->
+            <div class="rodape__conosco">
+                <!-- título Fale conosco -->
+                <p class="conosco--titulo">Fale Conosco</p>
+                <!-- Box fale conosco -->
+                <div>
+                    <p>atendimento@avanti.com</p>
+                    <p>(19) 00000-0000</p>
+                    <!-- Box ícons -->
+                    <div class="conosco--icons">
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Texto do rodapé -->
+        <div class="texto--rodape">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus dolorem cum beatae facere ducimus temporibus. Quia quis placeat maiores quos modi, asperiores pariatur exercitationem eligendi obcaecati perspiciatis repudiandae tenetur velit.</p>
+        </div>
+    </footer>
+    <!-- Funcionalidades do projeto -->
+    <script src="./js/main.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Slick -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Carrossel do Slick em jQuery -->
+    <script type="text/javascript">
+                $('.carrossel__corpo').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+            }
+            },
+            {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+            },
+            {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+            }
+        ]
+        });
+    </script>
+</body>
+</html>
