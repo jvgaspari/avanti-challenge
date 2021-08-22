@@ -11,9 +11,9 @@ Utilizar o Gulp para gerar a versão otimizada para produção.
 
 ## Como manipular o css desse projeto?
 
-Nesse projeto o arquivo css está sendo manipulado através do scss.
-Para isso deve-se instalar o sass e digitar o comando para o sass assistir as mudanças e atualizar o css.
-Feito isso basta realizar a estilização dos componentes pelo arquivo scss.
+Nesse projeto o arquivo css está sendo manipulado através do scss.  
+Para isso deve-se instalar o sass e digitar o comando para o sass assistir as mudanças e atualizar o css.  
+Feito isso basta realizar a estilização dos componentes pelo arquivo scss.  
 
 ### Site do sass
 https://sass-lang.com/
